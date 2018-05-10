@@ -3,7 +3,7 @@
   <h2>{{title}}</h2>
     <img class="logo-big" src="./img/vue-logo.png" />
     <p>
-      Plantilla hecha con Vue.js y Webpack
+      Plantilla del front TBD
     </p>
 </div>
 </template>
