@@ -9,20 +9,36 @@
 
         <!-- Bootstrap CSS CDN -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <!-- Our Custom CSS -->
-        <link rel="stylesheet" href="./index.css">
         <!-- Scrollbar Custom CSS -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+      <script src="https://d3js.org/d3.v5.min.js"></script>
 
     </head>
     <body>
         <div id="app"></div>
     </body>
 
+
     <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
     <!-- Bootstrap Js CDN -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+    <script type="text/javascript">
+    var datos = [135, 100, 150, 125, 225, 175];
+    var config = { columnWidth: 45, columnGap: 5, margin: 10, height: 235 };
 
-    
+    d3.select("svg")
+    .selectAll("rect")
+    .data(datos)
+    .enter().append("rect")
+    .attr("width", config.columnWidth)
+    .attr("x", function(d,i) {
+      return config.margin + i * (config.columnWidth + config.columnGap)
+    })
+    .attr("y", function(d,i) { return config.height - d })
+    .attr("height", function(d,i) { return d });
+
+    </script>
+
+
 </html>
