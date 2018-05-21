@@ -24,44 +24,7 @@ body {
   font-family: "Helvetica Neue", Arial, sans-serif;
 }
 
-header{
 
-  padding: 10px 20px;
-  background-color: lighten(#efefef, 3%);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  .branding{
-    img{
-      width: 20px;
-      display: inline-block;
-    }
-    span{
-      display: inline-block;
-    }
-  }
-  nav{
-    a{
-      font-size: 0.8em;
-      display: inline-block;
-      padding: 5px 10px;
-      color:darken($secondary-color, 10%);
-      text-decoration: none;
-      position: relative;
-      cursor: pointer;
-      &:hover::after{
-          content:'';
-          position: absolute;
-          bottom: -5px;
-          left: 0px;
-          width: 100%;
-          height: 3px;
-          background-color: $main-color;
-
-      }
-    }
-  }
-}
 .center {
   text-align: center;
   margin: 0 auto;
@@ -100,20 +63,68 @@ header{
 /**
  * Footer Styles
  */
+ .logo-small{
+  transition: 600ms;
+  transform-origin: 50% 40%;
+  &:hover{
+    transform: rotate(360deg);
+  }
+}
+
+header{
+
+  padding: 8px 20px;
+  background-color:#fb6400c4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .branding{
+    img{
+      width: 32px;
+      display: inline-block;
+    }
+    span{
+      display: inline-block;
+      color:white;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      font-size: 150%;
+    }
+  }
+  nav{
+    .button {
+      font-size: 1.1em;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      position: relative;
+      background-color: #fc883b;
+      border: white;
+      border-radius: 12px;
+      color: white;
+      padding: 6px 12px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+  }
+  .button1 {
+    background-color: #fc883b;
+    color: white;
+  }
+
+  .button1:hover {
+      background-color: white; 
+      color:#737373; 
+      border: 2px solid #fc883b;
+  }
+  
+  }
+}
 
 footer {
   position: absolute;
   right: 0;
   bottom: 0;
   left: 0;
-  padding: 1rem;
-  background-color: #efefef;
+  padding: 0.5rem;
+  background-color:#151414e8;
   text-align: center;
-}
-.logo-small{
-  transition: 600ms;
-  transform-origin: 50% 40%;
-  &:hover{
-    transform: rotate(360deg);
-  }
 }
