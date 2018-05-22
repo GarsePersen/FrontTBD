@@ -1,0 +1,42 @@
+
+#login-content{
+    position: absolute;
+    top: 53px;
+    right: 10;
+    z-index: 999;
+    background-color: #fb6400c4;
+    padding: 20px;
+    width: 250px;
+    height: 150px;
+    border-radius: 10px 10px 10px 10px;
+    display: none;
+}
+input#user, input#pass{
+    background-color:white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 7px 3px;
+    margin-bottom: 10px;
+    width: 220px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#submit{
+    font-size: 1.1em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: relative;
+    background-color: #fc883b;
+    border: 2px solid #e47123;
+    border-radius: 5px;
+    color: white;
+    padding: 6px 40px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#submit:hover {
+    background-color: white; 
+    color:#737373; 
+    border: 2px solid #fc883b;
+}
