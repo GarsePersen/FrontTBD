@@ -7,6 +7,9 @@ export default{
         title:'Index'
       }
     },
+    components: {
+      BarGraph
+    },
     mounted:function(){
       console.log('Index.vue')
     }
