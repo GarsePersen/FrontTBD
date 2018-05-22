@@ -1,7 +1,12 @@
 import Navbar from '../navbar/navbar.vue'
 
 export default {
-    components: {
+  data(){
+    return{
+
+    }
+  },
+  components: {
         Navbar
-      }
+  }
 }

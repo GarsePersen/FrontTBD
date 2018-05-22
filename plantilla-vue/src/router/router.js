@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import Index from '../components/index/index.vue';
+import Index from '../components/index/Index.vue';
 
 Vue.use(VueRouter);
 
@@ -9,4 +9,3 @@ const routes = [
 ]
 
 export default new VueRouter({routes})
-
