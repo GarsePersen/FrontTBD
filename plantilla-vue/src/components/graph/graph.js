@@ -2,13 +2,13 @@ import BarGraph from '../graficoBarra/BarGraph.vue'
 export default{
     data(){
       return{
-        title:'Index'
+        title:'Graph'
       }
     },
     components: {
       BarGraph
     },
     mounted:function(){
-      console.log('Index.vue')
+      console.log('graph.vue')
     }
   }
