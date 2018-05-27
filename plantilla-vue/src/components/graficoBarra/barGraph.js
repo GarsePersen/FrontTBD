@@ -8,12 +8,10 @@ export default{
   props:['title'],
   methods:{
     loadGraph:function(data){
-      var margin = {top: 20, right: 20, bottom: 70, left: 40},
+      
+      var margin = {top: 30, right: 30, bottom: 100, left: 50},
       width = 700 - margin.left - margin.right,
       height = 500 - margin.top - margin.bottom;
-      console.log('print'+ height);
-      // Parse the date / time
-      var	parseDate = d3.time.format("%Y-%m").parse;
 
       var x = d3.scale.ordinal().rangeRoundBands([0, width], .05);
 
@@ -22,7 +20,7 @@ export default{
       var xAxis = d3.svg.axis()
           .scale(x)
           .orient("bottom")
-          .tickFormat(d3.time.format("%Y-%m"));
+          .ticks(10);
 
       var yAxis = d3.svg.axis()
           .scale(y)
@@ -37,12 +35,16 @@ export default{
                 "translate(" + margin.left + "," + margin.top + ")");
 
           data.forEach(function(d) {
-              d.date = parseDate(d.date);
-              d.value = +d.value;
+              d.name = d.name;
+              d.positive_tweets = +d.positive_tweets;
           });
 
-        x.domain(data.map(function(d) { return d.date; }));
-        y.domain([0, d3.max(data, function(d) { return d.value; })]);
+        x.domain(data.map(function(d) { 
+          return d.name; 
+        }));
+        y.domain([0, d3.max(data, function(d) {
+         return d.positive_tweets; 
+       })]);
 
         svg.append("g")
             .attr("class", "x axis")
@@ -62,22 +64,22 @@ export default{
             .attr("y", 6)
             .attr("dy", ".71em")
             .style("text-anchor", "end")
-            .text("Value ($)");
+            .text("Cantidad de Post");
 
         svg.selectAll("bar")
             .data(data)
           .enter().append("rect")
             //.style("fill", "steelblue")
-            .attr("x", function(d) { return x(d.date); })
+            .attr("x", function(d) { return x(d.name); })
             .attr("width", x.rangeBand())
-            .attr("y", function(d) { return y(d.value); })
-            .attr("height", function(d) { return height - y(d.value); });
+            .attr("y", function(d) { return y(d.positive_tweets); })
+            .attr("height", function(d) { return height - y(d.positive_tweets); });
         svg.append("text").text(this.title)
     }
   },
   mounted:function(){
     console.log('BarGraph');
-    this.$http.get('http://localhost:3000/sales')
+    this.$http.get('http://localhost:3000/estadisticas')
     .then(response=>{
       this.graphData = response.body;
      console.log('graphData',this.graphData);

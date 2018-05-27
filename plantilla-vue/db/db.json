@@ -9,21 +9,21 @@
     },
     {
       "name": "chayanne" ,
-      "positive_tweets": 250,
+      "positive_tweets": 300,
       "negative-tweets": 300,
       "total_tweets": 700,
       "date": "25-02-2018 20:00:00"
     },
     {
       "name": "bad bunny" ,
-      "positive_tweets": 250,
+      "positive_tweets": 350,
       "negative-tweets": 300,
       "total_tweets": 700,
       "date": "25-02-2018 20:00:00"
     },
     {
       "name": "ska-p" ,
-      "positive_tweets": 250,
+      "positive_tweets": 400,
       "negative-tweets": 300,
       "total_tweets": 700,
       "date": "25-02-2018 20:00:00"
@@ -37,14 +37,14 @@
     },
     {
       "name": "Inti-llimani" ,
-      "positive_tweets": 250,
+      "positive_tweets": 550,
       "negative-tweets": 300,
       "total_tweets": 700,
       "date": "25-02-2018 20:00:00"
     },
     {
       "name": "chubaca" ,
-      "positive_tweets": 250,
+      "positive_tweets": 659,
       "negative-tweets": 300,
       "total_tweets": 700,
       "date": "25-02-2018 20:00:00"

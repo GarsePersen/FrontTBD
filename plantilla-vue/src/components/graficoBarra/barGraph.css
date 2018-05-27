@@ -1,0 +1,17 @@
+rect{
+    fill:#54C08B;
+    stroke: SteelBlue;
+    stroke-width: 2;
+  }
+.axis {
+  font: 15px sans-serif;
+}
+
+.axis path,.axis line {
+  fill: none;
+  stroke: #000;
+}
+
+rect:hover {
+    fill: SteelBlue;
+}

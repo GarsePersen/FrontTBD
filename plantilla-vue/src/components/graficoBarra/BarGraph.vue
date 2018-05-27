@@ -1,3 +1,3 @@
 <template src="./barGraph.html"></template>
-<style src="./barGraph.scss"></style>
+<style src="./barGraph.css"></style>
 <script src="./barGraph.js"></script>
