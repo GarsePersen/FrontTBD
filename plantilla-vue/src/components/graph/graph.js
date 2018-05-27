@@ -1,4 +1,4 @@
-import BarGraph from '../graficoBarra/barGraph.vue'
+import BarGraph from '../graficoBarra/BarGraph.vue'
 export default{
     data(){
       return{
