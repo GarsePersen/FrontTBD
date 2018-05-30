@@ -1,4 +1,6 @@
+import Sidebar from '../sidebar/sidebar.vue'
 import BarGraph from '../graficoBarra/BarGraph.vue'
+
 export default{
     data(){
       return{
@@ -6,7 +8,9 @@ export default{
       }
     },
     components: {
-      BarGraph
+      BarGraph,
+      Sidebar
+   
     },
     mounted:function(){
       console.log('graph.vue')
