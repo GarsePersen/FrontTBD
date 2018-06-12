@@ -1,11 +1,16 @@
-/*.wrapper {
+.wrapper {
     display: flex;
     align-items: stretch;
-    height: 100%;
+    height: 94.8%;
 }
 .centrado {
 	display: flex;
 	  justify-content: center;
 	align-items: center;
 }
-*/
+
+.principal {
+	text-align: center;
+	display: flex; 
+	align-items: center;
+}

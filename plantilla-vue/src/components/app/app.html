@@ -1,7 +1,11 @@
-
 <div>
     <navbar/>
-    
-    <router-view></router-view>
-    
+    <div class="wrapper">
+    	<div>
+    		<sidebar></sidebar>
+    	</div>
+    	<div class="col-md-12 principal">
+    		<router-view></router-view>    
+    	</div>
+    </div>
 </div>

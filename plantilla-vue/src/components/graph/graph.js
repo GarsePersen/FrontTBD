@@ -1,5 +1,5 @@
 import Sidebar from '../sidebar/sidebar.vue'
-import BarGraph from '../graficoBarra/BarGraph.vue'
+import BarGraph from '../graficoBarra2/BarGraph.vue'
 
 export default{
     data(){

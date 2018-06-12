@@ -1,4 +1,5 @@
 import Navbar from '../navbar/navbar.vue'
+import Sidebar from '../sidebar/sidebar.vue'
 
 export default {
   data(){
@@ -6,6 +7,7 @@ export default {
     }
   },
   components: {
-        Navbar
+        Navbar,
+        Sidebar
   }
 }
