@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "dev": "webpack-dev-server --open --env.dev",
+    "dev": "webpack-dev-server --open --env.dev --host 0.0.0.0",
     "prestart":"npm install",
     "start": "npm run dev"
   },
