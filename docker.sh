@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+TAG=front-tbd
+API=front-tbd
+
+
+echo "building image"
+docker build -t $TAG .
+
+if docker container ls | grep $API > /dev/null; then
+  echo "stopping old container"
+  docker container stop $API
+fi
+
+if docker container ls -a | grep $API > /dev/null; then
+  echo "removing old container"
+  docker container rm $API
+fi
+
+echo "launching container"
+docker run -v node_modules:/usr/src/app/node_modules --name $API -d -p 80:8080 $TAG

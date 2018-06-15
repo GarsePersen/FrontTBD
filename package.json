@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
-    "dev": "webpack-dev-server --open --env.dev"
+    "dev": "webpack-dev-server --open --env.dev",
+    "prestart":"npm install",
+    "start": "npm run dev"
   },
   "author": "",
   "license": "ISC",
