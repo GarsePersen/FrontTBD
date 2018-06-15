@@ -18,4 +18,4 @@ if docker container ls -a | grep $API > /dev/null; then
 fi
 
 echo "launching container"
-docker run -v node_modules:/usr/src/app/node_modules --name $API -d -p 80:8080 $TAG
+docker run -v node_modules:/usr/src/app/node_modules --name $API -d -p 80:8080 --restart unless-stopped $TAG
