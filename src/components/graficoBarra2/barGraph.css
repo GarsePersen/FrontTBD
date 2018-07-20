@@ -1,12 +1,4 @@
-.bar1{
-    fill:#54C08B;
-    stroke: #A6EA66;
-}
-.bar2{
-	fill: #558FB4 ;
-	stroke: #A6EA66;
 
-}
 .axis {
   font: 15px sans-serif;
 }
@@ -17,5 +9,6 @@
 }
 
 rect:hover {
-    fill: #A6EA66;
+    fill: #3182bd;
+    stroke: #000;
 }

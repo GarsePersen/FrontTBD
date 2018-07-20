@@ -7,11 +7,10 @@ export default{
   },
   props:['title'],
   methods:{
-    loadGraph:function(data){
-      
+    loadGraph(data){
       var margin = {top: 30, right: 30, bottom: 100, left: 50},
       width = 800 - margin.left - margin.right,
-      height = 600 - margin.top - margin.bottom;
+      height = 550 - margin.top - margin.bottom;
 
       var x = d3.scale.ordinal().rangeRoundBands([0, width], .05);
 
@@ -25,26 +24,28 @@ export default{
       var yAxis = d3.svg.axis()
           .scale(y)
           .orient("left")
-          .ticks(10);
+          .ticks(24);
 
-      var svg = d3.select(this.$el).append("svg")
+      var svg = d3.select('#grafico')
+        .append("svg")
           .attr("width", width + margin.left + margin.right)
           .attr("height", height + margin.top + margin.bottom)
         .append("g")
           .attr("transform",
                 "translate(" + margin.left + "," + margin.top + ")");
 
-          data.forEach(function(d) {
-              d.name = d.name;
-              d.positive_tweets = +d.positive_tweets;
-              d.negative_tweets = +d.negative_tweets;
-          });
+      data.forEach(function(d) {
+          d.name = d.name;
+          d.positive_tweets = +d.positive_tweets;
+          d.negative_tweets = +d.negative_tweets;
+          d.total_tweets = +d.total_tweets;
+      });
 
         x.domain(data.map(function(d) { 
           return d.name; 
         }));
         y.domain([0, d3.max(data, function(d) {
-         return d.positive_tweets; 
+         return d.total_tweets; 
        })]);
 
         svg.append("g")
@@ -66,38 +67,64 @@ export default{
             .attr("dy", ".71em")
             .style("text-anchor", "end")
             .text("Cantidad de Post");
+        
+        
+        svg.selectAll("bar")
+            .data(data)
+            .enter()
+            .append("rect")
+            .attr("fill","#9ecae1")
+            .attr("x", function(d) { return x(d.name); })
+            .attr("width", x.rangeBand())
+            .attr("y", function(d) { return y(d.total_tweets); })
+            .attr("height", function(d) { return height - y(d.total_tweets); })
+            .append("title")
+            .text(function (d,i) {
+                return "Post Totales:"+d.total_tweets;
+              });
 
         svg.selectAll("bar")
             .data(data)
             .enter().append("rect")
-            .attr("class","bar1")
+            .attr("fill","#c6dbef")
             .attr("x", function(d){return  x(d.name) + x.rangeBand()/2 ;})
             .attr("width", x.rangeBand()/2)
             .attr("y", function(d) { return y(d.positive_tweets); })
-            .attr("height", function(d) { return height - y(d.positive_tweets); });
-
+            .attr("height", function(d) { return height - y(d.positive_tweets); })
+            .append("title")
+            .text(function (d,i) {
+                return "Post Positivos:"+d.positive_tweets;
+              });
+              
         svg.selectAll("bar")
             .data(data)
-            .enter().append("rect")
-            .attr("class","bar2")
+            .enter()
+            .append("rect")
+            .attr("fill","#6baed6")
             .attr("x", function(d) { return x(d.name); })
             .attr("width", x.rangeBand()/2)
             .attr("y", function(d) { return y(d.negative_tweets); })
-            .attr("height", function(d) { return height - y(d.negative_tweets); });
+            .attr("height", function(d) { return height - y(d.negative_tweets); })
+            .append("title")
+            .text(function (d,i) {
+                return "Post Negativos:"+d.negative_tweets;
+              });
+        
+        
+                 
 
         svg.append("text").text(this.title)
     }
   },
-
   mounted:function(){
-    console.log('BarGraph');
-    this.$http.get('http://localhost:3000/estadisticas')
-    .then(response=>{
-      this.graphData = response.body;
-     console.log('graphData',this.graphData);
-     this.loadGraph(this.graphData);
-    }, response=>{
-       console.log('error cargando lista');
+    let self = this;
+    fetch('http://localhost:3000/estadisticas')
+    .then(function(response) {
+      return response.json();
     })
+    .then(function(myJson) {
+      let aux= myJson;
+      self.loadGraph(aux);
+    });
   }
 }

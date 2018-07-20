@@ -1,8 +1,3 @@
-rect{
-    fill:#54C08B;
-    /*stroke: SteelBlue;*/
-    stroke-width: 2;
-  }
 .axis {
   font: 15px sans-serif;
 }
@@ -13,5 +8,6 @@ rect{
 }
 
 rect:hover {
-    fill: SteelBlue;
+    fill: #3182bd;
+    stroke: #000;
 }
