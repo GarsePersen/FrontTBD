@@ -36,8 +36,8 @@ export default{
 
       data.forEach(function(d) {
           d.name = d.name;
-          d.positive_tweets = +d.positive_tweets;
-          d.negative_tweets = +d.negative_tweets;
+          d.positiveTweets = +d.positiveTweets;
+          d.negativeTweets = +d.negativeTweets;
           d.total_tweets = +d.total_tweets;
       });
 
@@ -48,26 +48,6 @@ export default{
          return d.total_tweets; 
        })]);
 
-        svg.append("g")
-            .attr("class", "x axis")
-            .attr("transform", "translate(0," + height + ")")
-            .call(xAxis)
-          .selectAll("text")
-            .style("text-anchor", "end")
-            .attr("dx", "-.8em")
-            .attr("dy", "-.55em")
-            .attr("transform", "rotate(-90)" );
-
-        svg.append("g")
-            .attr("class", "y axis")
-            .call(yAxis)
-          .append("text")
-            .attr("transform", "rotate(-90)")
-            .attr("y", 6)
-            .attr("dy", ".71em")
-            .style("text-anchor", "end")
-            .text("Cantidad de Post");
-        
         
         svg.selectAll("bar")
             .data(data)
@@ -89,11 +69,11 @@ export default{
             .attr("fill","#c6dbef")
             .attr("x", function(d){return  x(d.name) + x.rangeBand()/2 ;})
             .attr("width", x.rangeBand()/2)
-            .attr("y", function(d) { return y(d.positive_tweets); })
-            .attr("height", function(d) { return height - y(d.positive_tweets); })
+            .attr("y", function(d) { return y(d.positiveTweets); })
+            .attr("height", function(d) { return height - y(d.positiveTweets); })
             .append("title")
             .text(function (d,i) {
-                return "Post Positivos:"+d.positive_tweets;
+                return "Post Positivos:"+d.positiveTweets;
               });
               
         svg.selectAll("bar")
@@ -103,27 +83,47 @@ export default{
             .attr("fill","#6baed6")
             .attr("x", function(d) { return x(d.name); })
             .attr("width", x.rangeBand()/2)
-            .attr("y", function(d) { return y(d.negative_tweets); })
-            .attr("height", function(d) { return height - y(d.negative_tweets); })
+            .attr("y", function(d) { return y(d.negativeTweets); })
+            .attr("height", function(d) { return height - y(d.negativeTweets); })
             .append("title")
             .text(function (d,i) {
-                return "Post Negativos:"+d.negative_tweets;
+                return "Post Negativos:"+d.negativeTweets;
               });
         
+        svg.append("g")
+          .attr("class", "y axis")
+          .call(yAxis)
+          .append("text")
+          .attr("transform", "rotate(-90)")
+          .attr("y", 6)
+          .attr("dy", ".71em")
+          .style("text-anchor", "end")
+          .text("Cantidad de Post");
         
-                 
+        svg.append("g")
+          .attr("class", "x axis")
+          .attr("transform", "translate(0," + height + ")")
+          .call(xAxis)
+          .selectAll("text")
+          .style("text-anchor", "end")
+          .attr("dx", "-.8em")
+          .attr("dy", "-.55em")
+          .attr("transform", "rotate(-90)" );
 
         svg.append("text").text(this.title)
     }
   },
   mounted:function(){
     let self = this;
-    fetch('http://localhost:3000/estadisticas')
+    fetch('http://165.227.12.119:9091/statistics/best10/genre/rock')
     .then(function(response) {
       return response.json();
     })
     .then(function(myJson) {
       let aux= myJson;
+
+      console.log(aux);
+      
       self.loadGraph(aux);
     });
   }

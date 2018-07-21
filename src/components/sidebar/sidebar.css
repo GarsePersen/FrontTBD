@@ -59,7 +59,7 @@ i, span {
 #sidebar {
     min-width: 200px;
     max-width: 200px;
-    background: #fb6400c4;
+    background: #6baed6;
     color: #fff;
     transition: all 0.2s;
     height:100%;
@@ -98,10 +98,7 @@ i, span {
     margin-bottom: 5px;
 }
 
-#sidebar.active ul ul a {
-    padding: 10px !important;
 
-}
 
 #sidebar.active a[aria-expanded="false"]::before, #sidebar.active a[aria-expanded="true"]::before {
     top: auto;
@@ -113,27 +110,22 @@ i, span {
 }
 
 
-#sidebar ul.components {
-    padding: 10px 0;
-    
-}
+
 
 #sidebar ul li a {
-    padding: 10px;
+    padding:10px 10px 15px 5px !important;
     font-size: 1.1em;
     display: block;
 }
 #sidebar ul li a:hover {
-    color: #fb6400c4;
+    color: #6baed6;
     background: #fff;
 }
-#sidebar ul li a i {
-    margin-right: 10px;
-}
+
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
     color: #fff;
-    background: #fb6400c4;
+    background: #6baed6;
 }
 
 
@@ -157,7 +149,7 @@ a[aria-expanded="true"]::before {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 20px !important;
-    background: #fb6400c4;
+    background: ##6baed6;
 }
 
 
@@ -219,5 +211,5 @@ ul ul a {
 }
 
 #sidebar .flechas{
-  background: #fb6400c4;
+  background: #6baed6;
 }
