@@ -1,13 +1,11 @@
 
-		$(function(){
-
-		       $('#login').click(function(){
-			   $(this).next('#login-content').slideToggle();
-			   $(this).toggleClass('active');          
-				 });
-				 var user = document.getElementById('user');
-				 console.log(user);
-			});
+$(function(){
+	$('#login').click(function(){
+		$(this).next('#login-content').slideToggle();
+		$(this).toggleClass('active');          
+	});
+	var user = document.getElementById('user');
+});
 
 /*
 function desplegarLogin(){
