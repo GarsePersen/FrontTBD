@@ -12,9 +12,9 @@ export default{
       for (let i = 0; i < data.length; i++) {
         if(data[i].name.length > mayorL){ mayorL = data[i].name.length}
       }
-      var margin = {top: 30, right: 30, bottom: mayorL*8, left: 60},
+      var margin = {top: 30, right: 30, bottom: mayorL*9, left: 60},
       width = 800 - margin.left - margin.right,
-      height = 550 - margin.top - margin.bottom;
+      height = 700 - margin.top - margin.bottom;
 
       var x = d3.scale.ordinal().rangeRoundBands([0, width], .05);
 
