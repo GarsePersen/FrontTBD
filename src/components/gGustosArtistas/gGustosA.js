@@ -1,4 +1,4 @@
-import d3 from "d3";
+
 export default{
   data:function(){
     return {
@@ -7,7 +7,7 @@ export default{
   },
   props:['title'],
   methods:{
-    loadGraph(data){
+    loadGraphGA(data){
       var mayorL = 0;
       for (let i = 0; i < data.length; i++) {
         if(data[i].name.length > mayorL){ mayorL = data[i].name.length}
@@ -139,7 +139,7 @@ export default{
     })
     .then(function(myJson) {
       let aux= myJson;
-      self.loadGraph(aux);
+      self.loadGraphGA(aux);
     });
   }
 }

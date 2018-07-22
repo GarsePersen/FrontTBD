@@ -1,3 +1,4 @@
+
 export default{
   data:function(){
     return {
@@ -6,7 +7,7 @@ export default{
   },
   props:['title'],
   methods:{
-    loadGraphGG(data){
+    loadGraphGA(data){
       var mayorL = 0;
       for (let i = 0; i < data.length; i++) {
         if(data[i].name.length > mayorL){ mayorL = data[i].name.length}
@@ -53,26 +54,26 @@ export default{
 
         
       svg.selectAll("bar")
-        .data(data)
-        .enter()
-        .append("rect")
-        .attr("style","")
-        .attr("id",function(d) { return d.name; })
-        .attr("fill","#c6dbef")
-        .attr("x", function(d) { return x(d.name); })
-        .attr("width", x.rangeBand())
-        .attr("y", function(d) { return y(d.total_tweets); })
-        .attr("height", function(d) { return height - y(d.total_tweets); })
-        .append("title")
-        .text(function (d,i) {
-            return "Tweets Totales:"+d.total_tweets;
-          });
+          .data(data)
+          .enter()
+          .append("rect")
+          .attr("style","stroke: #000;")
+
+          .attr("id",function(d) { return d.name; })
+          .attr("fill","#c6dbef")
+          .attr("x", function(d) { return x(d.name); })
+          .attr("width", x.rangeBand())
+          .attr("y", function(d) { return y(d.total_tweets); })
+          .attr("height", function(d) { return height - y(d.total_tweets); })
+          .append("title")
+          .text(function (d,i) {
+              return "Tweets Totales:"+d.total_tweets;
+            });
 
       svg.selectAll("bar")
           .data(data)
           .enter()
           .append("rect")
-          .attr("style","stroke: #000;")
           .attr("id",function(d) { return d.name; })
           .attr("fill","#6baed6")
           .attr("x", function(d){return  x(d.name);})
@@ -101,7 +102,7 @@ export default{
         .append("title")
         .text(function (d,i) {
             return "Tweets Negativos:"+d.negativeTweets;
-        });
+          });
         
       svg.append("g")
         .attr("class", "y axis")
@@ -126,19 +127,19 @@ export default{
       var svg = d3.select('#leyenda')
         .append("svg")
           .attr("width", 100)
-          .attr("height", 100);
+          .attr("height", 100)
         
     }
   },
   mounted:function(){
     let self = this;
-    fetch('http://165.227.12.119:9091/statistics/best10/genres')
+    fetch('http://165.227.12.119:9091/statistics/best10/artistAllGenres')
     .then(function(response) {
       return response.json();
     })
     .then(function(myJson) {
       let aux= myJson;
-      self.loadGraphGG(aux);
+      self.loadGraphGA(aux);
     });
   }
 }

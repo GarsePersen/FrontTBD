@@ -6,6 +6,7 @@ export default {
     return{
     }
   },
+  title:'iniciador',
   components: {
         Navbar,
         Sidebar

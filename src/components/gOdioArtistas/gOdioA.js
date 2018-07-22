@@ -1,18 +1,16 @@
-import d3 from "d3";
 export default{
+  title:"GraficoPeoresArtistas",
   data:function(){
     return {
-      graphData:[]
     }
   },
-  props:['title'],
   methods:{
-    loadGraph(data){
+    loadGraphOA(data){
       var mayorL = 0;
       for (let i = 0; i < data.length; i++) {
         if(data[i].name.length > mayorL){ mayorL = data[i].name.length}
       }
-      var margin = {top: 30, right: 30, bottom: mayorL*8, left: 50},
+      var margin = {top: 30, right: 30, bottom: mayorL*8, left: 60},
       width = 800 - margin.left - margin.right,
       height = 550 - margin.top - margin.bottom;
 
@@ -30,7 +28,7 @@ export default{
           .orient("left")
           .ticks(24);
 
-      var svg = d3.select('#grafico')
+      var svg = d3.select('#gOdioArtist')
         .append("svg")
           .attr("width", width + margin.left + margin.right)
           .attr("height", height + margin.top + margin.bottom)
@@ -128,19 +126,18 @@ export default{
           .attr("width", 100)
           .attr("height", 100)
         
-    }
+    },
   },
   mounted:function(){
     let self = this;
-    console.log();
+    console.log("Hello");
     fetch('http://165.227.12.119:9091/statistics/worst10/artistAllGenres')
     .then(function(response) {
       return response.json();
     })
     .then(function(myJson) {
       let aux= myJson;
-      
-      self.loadGraph(aux);
+      self.loadGraphOA(aux);
     });
   }
 }
