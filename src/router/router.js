@@ -1,14 +1,25 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Index from '../components/index/Index.vue';
-import gustosArtistas from  '../components/gGustosArtistas/gGustos.vue';
+import mejores10A from  '../components/gGustosArtistas/gGustosA.vue';
+import mejores10G from  '../components/gGustosGenero/gGustosG.vue';
+import peores10G from  '../components/gOdioGenero/gOdioG';
+import peores10A from  '../components/gOdioArtistas/gOdioA';
+import crecimiento from  '../components/grafCrecimiento/grafCrecimiento.vue';
+
 import graficoSimple from  '../components/graficoBarra/BarGraph.vue';
 
 Vue.use(VueRouter);
 
 const routes = [
     { path: '/index', alias: '/', component: Index},
-    { path: '#/graph', alias: '/graph', component: gustosArtistas},
+    { path: '#/gmejoresart', alias: '/gbestart', component: mejores10A},
+    { path: '#/gpeoresart', alias: '/gworstart', component: peores10A},
+
+    { path: '#/gpeoresgen', alias: '/gworstgen', component: peores10G},
+    { path: '#/gmejoresgen', alias: '/gbestgen', component: mejores10G},
+
+    { path: '#/gcrecimientoartista', alias: '/gcrecimiento', component: crecimiento}
 ]
 
 export default new VueRouter({routes})
