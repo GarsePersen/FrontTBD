@@ -57,9 +57,9 @@ export default{
           .data(data)
           .enter()
           .append("rect")
-          .attr("style","opacity: 0.5;")
+          .attr("style","")
           .attr("id",function(d) { return d.name; })
-          .attr("fill","#9ecae1")
+          .attr("fill","#c6dbef")
           .attr("x", function(d) { return x(d.name); })
           .attr("width", x.rangeBand())
           .attr("y", function(d) { return y(d.total_tweets); })
@@ -73,12 +73,14 @@ export default{
           .data(data)
           .enter()
           .append("rect")
+          .attr("style","stroke: #000;")
           .attr("id",function(d) { return d.name; })
-          .attr("fill","#c6dbef")
-          .attr("x", function(d){return  x(d.name) + x.rangeBand()/2 ;})
+          .attr("fill","#6baed6")
+          .attr("x", function(d){return  x(d.name);})
           .attr("width", x.rangeBand()/2)
           .attr("y", function(d) { return y(d.positiveTweets); })
           .attr("height", function(d) { return height - y(d.positiveTweets); })
+          
           .append("title")
           .text(function (d,i) {
               return "Tweets Positivos:"+d.positiveTweets;
@@ -88,12 +90,15 @@ export default{
         .data(data)
         .enter()
         .append("rect")
+        .attr("style","")
         .attr("data-toggle","showModal")
-        .attr("fill","#6baed6")
-        .attr("x", function(d) { return x(d.name); })
+        .attr("fill","#9ecae1")
+        .attr("x", function(d) { return x(d.name) + x.rangeBand()/2; })
         .attr("width", x.rangeBand()/2)
+
         .attr("y", function(d) { return y(d.negativeTweets); })
         .attr("height", function(d) { return height - y(d.negativeTweets); })
+
         .append("title")
         .text(function (d,i) {
             return "Tweets Negativos:"+d.negativeTweets;

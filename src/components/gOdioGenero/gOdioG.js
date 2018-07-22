@@ -53,50 +53,55 @@ export default{
        })]);
 
         
-      svg.selectAll("bar")
-          .data(data)
-          .enter()
-          .append("rect")
-          .attr("id",function(d) { return d.name; })
-          .attr("fill","#9ecae1")
-          .attr("x", function(d) { return x(d.name); })
-          .attr("width", x.rangeBand())
-          .attr("y", function(d) { return y(d.total_tweets); })
-          .attr("height", function(d) { return height - y(d.total_tweets); })
-          .append("title")
-          .text(function (d,i) {
-              return "Tweets Totales:"+d.total_tweets;
-            });
+       svg.selectAll("bar")
+       .data(data)
+       .enter()
+       .append("rect")
+       .attr("style","")
+       .attr("id",function(d) { return d.name; })
+       .attr("fill","#c6dbef")
+       .attr("x", function(d) { return x(d.name); })
+       .attr("width", x.rangeBand())
+       .attr("y", function(d) { return y(d.total_tweets); })
+       .attr("height", function(d) { return height - y(d.total_tweets); })
+       .append("title")
+       .text(function (d,i) {
+           return "Tweets Totales:"+d.total_tweets;
+         });
 
-      svg.selectAll("bar")
-          .data(data)
-          .enter()
-          .append("rect")
-          .attr("id",function(d) { return d.name; })
-          .attr("fill","#c6dbef")
-          .attr("x", function(d){return  x(d.name) + x.rangeBand()/2 ;})
-          .attr("width", x.rangeBand()/2)
-          .attr("y", function(d) { return y(d.positiveTweets); })
-          .attr("height", function(d) { return height - y(d.positiveTweets); })
-          .append("title")
-          .text(function (d,i) {
-              return "Tweets Positivos:"+d.positiveTweets;
-            });
-            
-      svg.selectAll("bar")
-        .data(data)
-        .enter()
-        .append("rect")
+     svg.selectAll("bar")
+         .data(data)
+         .enter()
+         .append("rect")
+         .attr("id",function(d) { return d.name; })
+         .attr("fill","#6baed6")
+         .attr("x", function(d){return  x(d.name);})
+         .attr("width", x.rangeBand()/2)
+         .attr("y", function(d) { return y(d.positiveTweets); })
+         .attr("height", function(d) { return height - y(d.positiveTweets); })
+         
+         .append("title")
+         .text(function (d,i) {
+             return "Tweets Positivos:"+d.positiveTweets;
+           });
+           
+     svg.selectAll("bar")
+       .data(data)
+       .enter()
+       .append("rect")
+       .attr("style","stroke: #000;")
         .attr("data-toggle","showModal")
-        .attr("fill","#6baed6")
-        .attr("x", function(d) { return x(d.name); })
-        .attr("width", x.rangeBand()/2)
-        .attr("y", function(d) { return y(d.negativeTweets); })
-        .attr("height", function(d) { return height - y(d.negativeTweets); })
-        .append("title")
-        .text(function (d,i) {
-            return "Tweets Negativos:"+d.negativeTweets;
-          });
+       .attr("fill","#9ecae1")
+       .attr("x", function(d) { return x(d.name) + x.rangeBand()/2; })
+       .attr("width", x.rangeBand()/2)
+
+       .attr("y", function(d) { return y(d.negativeTweets); })
+       .attr("height", function(d) { return height - y(d.negativeTweets); })
+
+       .append("title")
+       .text(function (d,i) {
+           return "Tweets Negativos:"+d.negativeTweets;
+       });
         
       svg.append("g")
         .attr("class", "y axis")
