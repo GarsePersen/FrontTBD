@@ -63,6 +63,7 @@ i, span {
     color: #fff;
     transition: all 0.2s;
     height:100%;
+    Overflow: auto;
 
 }
 

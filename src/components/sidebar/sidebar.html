@@ -7,8 +7,22 @@
             </a>
             <ul class="collapse list-unstyled" id="homeSubmenu">
               <li><a href="#/gcomentados">Los mas comentados</a></li>
-              <li><a href="#/gbestart">Los mas queridos</a></li>
-              <li><a href="#/gworstart">Los menos queridos</a></li>
+              <li><a href="#gbestart" data-toggle="collapse" aria-expanded="false">Los mas queridos</a>
+                <ul class="collapse list-unstyled" id="gbestart">
+                  <li><a href="#/gbestart">Top 10 artistas</a></li>
+                  <li v-for="genero in generos">
+                    <a href="#genero">{{genero.nombre}}</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a href="#gbestart" data-toggle="collapse" aria-expanded="false">Los menos queridos</a>
+                <ul class="collapse list-unstyled" id="gbestart">
+                  <li><a href="#/gbestart">Top 10 artistas</a></li>
+                  <li v-for="genero in generos">
+                    <a href="#genero">{{genero.nombre}}</a>
+                  </li>
+                </ul>
+              </li>
             </ul>
             <a href="#genSubmenu" data-toggle="collapse" aria-expanded="false">
                 <i class="  glyphicon glyphicon-signal"></i>
