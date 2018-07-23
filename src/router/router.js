@@ -21,7 +21,7 @@ const routes = [
     { path: '#/gpeoresgen', alias: '/gworstgen', component: peores10G},
     { path: '#/gmascomentados', alias: '/gcomentados', component: masComentados},
     { path: '#/gcrecimientoartista', alias: '/gcrecimiento', component: crecimiento},
-    { path: '#/gartistas/:tipo/:name', component: gArtistas},
+    { path: '/gartistas/:tipo/:name', component: gArtistas}
 ]
 
 export default new VueRouter({routes})

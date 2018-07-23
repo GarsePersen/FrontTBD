@@ -133,18 +133,17 @@ export default{
     },
     mounted:function(){
       let self = this;
-      let name = this.$route.params.name;
-      let tipo = this.$route.params.tipo;
+      let name = self.$route.params.name;
+      let tipo = self.$route.params.tipo;
       let url;
       if (tipo === 'true') {
         url = 'http://165.227.12.119:9091/statistics/best10/genre/'+name;
+        } else {
+            url = 'http://165.227.12.119:9091/statistics/worst10/genre/'+name;
         }
-      else {
-        url = 'http://165.227.12.119:9091/statistics/worst10/genre/'+name;
-      }
-      console.log(name);
-      console.log(tipo);
-      console.log(url);
+    console.log(name);
+    console.log(tipo);
+    console.log(url);
       fetch(url)
       .then(function(response) {
         return response.json();
