@@ -11,15 +11,15 @@
                 <ul class="collapse list-unstyled" id="gbestart">
                   <li><a href="#/gbestart">Top 10 artistas</a></li>
                   <li v-for="genero in generos">
-                    <a href="#genero">{{genero.nombre}}</a>
+                    <a :href="'#/gartistas/true/' + genero.nombre">{{genero.nombre}}</a>
                   </li>
                 </ul>
               </li>
-              <li><a href="#gbestart" data-toggle="collapse" aria-expanded="false">Los menos queridos</a>
-                <ul class="collapse list-unstyled" id="gbestart">
-                  <li><a href="#/gbestart">Top 10 artistas</a></li>
+              <li><a href="#gworstart" data-toggle="collapse" aria-expanded="false">Los menos queridos</a>
+                <ul class="collapse list-unstyled" id="gworstart">
+                  <li><a href="#/gworstart">Top 10 artistas</a></li>
                   <li v-for="genero in generos">
-                    <a href="#genero">{{genero.nombre}}</a>
+                    <a :href="'#/gartistas/false/' + genero.nombre">{{genero.nombre}}</a>
                   </li>
                 </ul>
               </li>

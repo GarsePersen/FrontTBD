@@ -1,0 +1,14 @@
+.axis {
+    font: 15px sans-serif;
+  }
+  
+  .axis path,.axis line {
+    fill: none;
+    stroke: #000;
+  }
+  
+  rect:hover {
+      fill: #3182bd;
+      stroke: #000;
+  
+  }
