@@ -59,7 +59,7 @@ i, span {
 #sidebar {
     min-width: 200px;
     max-width: 200px;
-    background: #6baed6;
+    background: #424949;
     color: #fff;
     transition: all 0.2s;
     height:100%;
@@ -118,14 +118,14 @@ i, span {
     display: block;
 }
 #sidebar ul li a:hover {
-    color: #6baed6;
+    color: #424949;
     background: #fff;
 }
 
 
 #sidebar ul li.active > a, a[aria-expanded="true"] {
     color: #fff;
-    background: #6baed6;
+    background: #424949;
 }
 
 
@@ -149,7 +149,7 @@ a[aria-expanded="true"]::before {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 20px !important;
-    background: ##6baed6;
+    background: #424949;
 }
 
 
@@ -211,5 +211,5 @@ ul ul a {
 }
 
 #sidebar .flechas{
-  background: #6baed6;
+  background: #424949;
 }
