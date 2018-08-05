@@ -133,7 +133,7 @@ export default{
   },
   mounted:function(){
     let self = this;
-    fetch('http://165.227.12.119:9091/statistics/best10/artistAllGenres')
+    fetch('http://165.227.12.119:9091/statistics/best10/popularArtist')
     .then(function(response) {
       return response.json();
     })
