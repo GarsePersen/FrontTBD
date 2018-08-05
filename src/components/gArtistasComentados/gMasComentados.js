@@ -78,12 +78,12 @@ export default{
           .attr("fill","#70AA32")
           .attr("x", function(d){return  x(d.name);})
           .attr("width", x.rangeBand()/2)
-          .attr("y", function(d) { return y(d.positiveTweets); })
-          .attr("height", function(d) { return height - y(d.positiveTweets); })
+          .attr("y", function(d) { return y(d.total_tweets*d.positiveTweets); })
+          .attr("height", function(d) { return height - y(d.total_tweets*d.positiveTweets); })
           
           .append("title")
           .text(function (d,i) {
-              return "Tweets Positivos:"+d.positiveTweets;
+              return "Porcentaje Tweets Positivos:"+d.positiveTweets;
             });
             
       svg.selectAll("bar")
@@ -96,12 +96,12 @@ export default{
         .attr("x", function(d) { return x(d.name) + x.rangeBand()/2; })
         .attr("width", x.rangeBand()/2)
 
-        .attr("y", function(d) { return y(d.negativeTweets); })
-        .attr("height", function(d) { return height - y(d.negativeTweets); })
+        .attr("y", function(d) { return y(d.total_tweets*d.negativeTweets); })
+        .attr("height", function(d) { return height - y(d.total_tweets*d.negativeTweets); })
 
         .append("title")
         .text(function (d,i) {
-            return "Tweets Negativos:"+d.negativeTweets;
+            return "Porcentaje Tweets Negativos:"+d.negativeTweets;
           });
         
       svg.append("g")
