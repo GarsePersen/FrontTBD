@@ -72,8 +72,8 @@ export default{
             //.style("fill", "steelblue")
             .attr("x", function(d) { return x(d.name); })
             .attr("width", x.rangeBand())
-            .attr("y", function(d) { return y(d.positive_tweets); })
-            .attr("height", function(d) { return height - y(d.positive_tweets); });
+            .attr("y", function(d) { return y(d.total_tweets*d.positive_tweets); })
+            .attr("height", function(d) { return height - y(d.total_tweets*d.positive_tweets); });
         svg.append("text").text(this.title)
     }
   },

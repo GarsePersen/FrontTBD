@@ -78,8 +78,8 @@ export default{
           .attr("fill","#6baed6")
           .attr("x", function(d){return  x(d.name);})
           .attr("width", x.rangeBand()/2)
-          .attr("y", function(d) { return y(d.positiveTweets); })
-          .attr("height", function(d) { return height - y(d.positiveTweets); })
+          .attr("y", function(d) { return y(d.total_tweets*d.positiveTweets); })
+          .attr("height", function(d) { return height - y(d.total_tweets*d.positiveTweets); })
           
           .append("title")
           .text(function (d,i) {
@@ -96,8 +96,8 @@ export default{
         .attr("x", function(d) { return x(d.name) + x.rangeBand()/2; })
         .attr("width", x.rangeBand()/2)
 
-        .attr("y", function(d) { return y(d.negativeTweets); })
-        .attr("height", function(d) { return height - y(d.negativeTweets); })
+        .attr("y", function(d) { return y(d.total_tweets*d.negativeTweets); })
+        .attr("height", function(d) { return height - y(d.total_tweets*d.negativeTweets); })
 
         .append("title")
         .text(function (d,i) {
