@@ -89,7 +89,7 @@ export default{
   },
   mounted:function(){
     let self = this;
-    fetch('http://165.227.12.119:9091/statistics/best10/genre/rock')
+    fetch('http://165.227.12.119:9091/statistics/best10/artistIncrease')
     .then(function(response) {
       return response.json();
     })
