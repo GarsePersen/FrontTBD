@@ -8,6 +8,7 @@ import mejores10G from  '../components/gGustosGenero/gGustosG.vue';
 import crecimiento from  '../components/grafCrecimiento/grafCrecimiento.vue';
 import masComentados from  '../components/gArtistasComentados/gMasComentados.vue';
 import gArtistas from '../components/gArtistas/gArtistas.vue';
+import grafo from '../components/grafo/grafo.vue';
 
 import graficoSimple from  '../components/graficoBarra/BarGraph.vue';
 
@@ -21,6 +22,7 @@ const routes = [
     { path: '#/gpeoresgen', alias: '/gworstgen', component: peores10G},
     { path: '#/gmascomentados', alias: '/gcomentados', component: masComentados},
     { path: '#/gcrecimientoartista', alias: '/gcrecimiento', component: crecimiento},
+    { path: '#/grafo', alias: '/grafo', component: grafo},
     { path: '/gartistas/:tipo/:name', component: gArtistas}
 ]
 
