@@ -1,0 +1,16 @@
+.wrapper {
+    display: flex;
+    align-items: stretch;
+    height: 92%;
+}
+.centrado {
+	display: flex;
+	  justify-content: center;
+	align-items: center;
+}
+
+.principal {
+	text-align: center;
+	display: flex; 
+	align-items: center;
+}
