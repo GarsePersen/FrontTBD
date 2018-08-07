@@ -1,7 +1,7 @@
 <div>
     <navbar/>
     <div class="wrapper">
-    	<div>
+    	<div v-if="$route.path !== '/'">
     		<sidebar></sidebar>
     	</div>
     	<div class="col-md-12 principal">

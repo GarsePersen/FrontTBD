@@ -1,55 +1,56 @@
 <nav id="sidebar" v-bind:class = "{active: isActive}" >
     <ul class="list-unstyled components">
-        <li class="">
-            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
-                <i class="  glyphicon glyphicon-signal"></i>
-                Segun artistas
-            </a>
-            <ul class="collapse list-unstyled" id="homeSubmenu">
-              <li><a href="#/gcomentados">Los mas comentados</a></li>
-              <li><a href="#gbestart" data-toggle="collapse" aria-expanded="false">Los mas queridos</a>
-                <ul class="collapse list-unstyled" id="gbestart">
-                  <li><a href="#/gbestart">Top 10 artistas</a></li>
-                  <li v-for="genero in generos">
-                    <a :href="'#/gartistas/true/' + genero.nombre">{{genero.nombre}}</a>
-                  </li>
-                </ul>
-              </li>
-              <li><a href="#gworstart" data-toggle="collapse" aria-expanded="false">Los menos queridos</a>
-                <ul class="collapse list-unstyled" id="gworstart">
-                  <li><a href="#/gworstart">Top 10 artistas</a></li>
-                  <li v-for="genero in generos">
-                    <a :href="'#/gartistas/false/' + genero.nombre">{{genero.nombre}}</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-            <a href="#genSubmenu" data-toggle="collapse" aria-expanded="false">
-                <i class="  glyphicon glyphicon-signal"></i>
-                Segun géneros
-            </a>
-            <ul class="collapse list-unstyled" id="genSubmenu">
-              <li><a href="#/gbestgen">Los mas queridos</a></li>
-              <li><a href="#/gworstgen">Los menos queridos</a></li>
-              <li><a href="#">Aumentando en popularidad</a></li>
-            </ul>
-            
-            <a href="#mapSubmenu" data-toggle="collapse" aria-expanded="false">
-              <i class="glyphicon glyphicon-map-marker"></i>
-                Mapa Calor
-            </a>
-            <ul class="collapse list-unstyled" id="mapSubmenu">
-              <li><a href="#">Page 1</a></li>
-            </ul>
+        <li class="" v-if="$route.path === '/map'">
+          <a href="#mapSubmenu" data-toggle="collapse" aria-expanded="false">
+            <i class="glyphicon glyphicon-map-marker"></i>
+              Mapa Calor
+          </a>
+      </li>
+      <li class="" v-else>
+          <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
+              <i class="  glyphicon glyphicon-signal"></i>
+              Segun artistas
+          </a>
+          <ul class="collapse list-unstyled" id="homeSubmenu">
+            <li><a href="#/gcomentados">Los mas comentados</a></li>
+            <li><a href="#gbestart" data-toggle="collapse" aria-expanded="false">Los mas queridos</a>
+              <ul class="collapse list-unstyled" id="gbestart">
+                <li><a href="#/gbestart">Top 10 artistas</a></li>
+                <li v-for="genero in generos">
+                  <a :href="'#/gartistas/true/' + genero.nombre">{{genero.nombre}}</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#gworstart" data-toggle="collapse" aria-expanded="false">Los menos queridos</a>
+              <ul class="collapse list-unstyled" id="gworstart">
+                <li><a href="#/gworstart">Top 10 artistas</a></li>
+                <li v-for="genero in generos">
+                  <a :href="'#/gartistas/false/' + genero.nombre">{{genero.nombre}}</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <a href="#genSubmenu" data-toggle="collapse" aria-expanded="false">
+              <i class="  glyphicon glyphicon-signal"></i>
+              Segun géneros
+          </a>
+          <ul class="collapse list-unstyled" id="genSubmenu">
+            <li><a href="#/gbestgen">Los mas queridos</a></li>
+            <li><a href="#/gworstgen">Los menos queridos</a></li>
+            <li><a href="#">Aumentando en popularidad</a></li>
+          </ul>
+          <ul class="collapse list-unstyled" id="mapSubmenu">
+            <li><a href="#">Page 1</a></li>
+          </ul>
 
-            <a href="#graphSubmenu" data-toggle="collapse" aria-expanded="false">
-              <i class="glyphicon"></i>
-                Grafos
-            </a>
-            <ul class="collapse list-unstyled" id="graphSubmenu">
-              <li><a href="#/grafo">Page 1</a></li>
-            </ul>
-        </li>
+          <a href="#graphSubmenu" data-toggle="collapse" aria-expanded="false">
+            <i class="glyphicon"></i>
+              Grafos
+          </a>
+          <ul class="collapse list-unstyled" id="graphSubmenu">
+            <li><a href="#/grafo">Page 1</a></li>
+          </ul>
+      </li>
     </ul>
     <div v-on:click="collapse" class="text-center flechas">
       <a>

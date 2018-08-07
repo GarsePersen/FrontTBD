@@ -10,5 +10,10 @@ export default {
   components: {
         Navbar,
         Sidebar
+  },
+  watch: {
+    $route: function() {
+      console.log(this.$route)
+    }
   }
 }
