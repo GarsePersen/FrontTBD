@@ -1,0 +1,30 @@
+<div class="wrapper centrado col-md-12">  
+  <form class="form-horizontal">
+    <fieldset>
+      <legend>Agregando un Artista</legend>
+      <img id="imagenBanda" v-bind:src="img" class="img-responsive center" style="width:200px; margin-bottom: 20px;" >
+      <!-- Select Basic -->
+      <div class="form-group">
+        <label class="col-md-6 control-label" for="dropestilo">Seleccione el Estilo al que corresponde el nuevo Artista/Banda</label>
+        <div class="col-md-6">
+          <select id="opEstilos" name="dropestilo" v-model="genSelected" class="form-control">
+            <option v-for="genero in generos" :key="genero.id" >
+              {{genero.nombre}}
+            </option>
+          </select>
+        </div>
+      </div>
+      
+      <!-- Text input-->
+      <div class="form-group">
+        <label class="col-md-6 control-label" for="nombreArtista">Nombre Artista / Banda</label>  
+        <div class="col-md-6">
+          <input id="nombreArtista" v-on:blur="buscarImagen" v-model="nuevoartista" name="nombreArtista" type="text" placeholder="Nombre" class="form-control input-md" required="">
+          <span class="help-block">Nombre del Artista o de la Banda</span>  
+        </div>
+      </div>
+      <a href="#" class="btn btn-info" role="button" v-on:click="crearArtista">Agregar</a>
+      
+    </fieldset>
+  </form>
+</div>

@@ -1,8 +1,3 @@
-.wrapper {
-    display: flex;
-    align-items: stretch;
-    height: 92%;
-}
 .centrado {
 	display: flex;
 	  justify-content: center;

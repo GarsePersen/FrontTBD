@@ -9,8 +9,7 @@ import crecimiento from  '../components/grafCrecimiento/grafCrecimiento.vue';
 import masComentados from  '../components/gArtistasComentados/gMasComentados.vue';
 import gArtistas from '../components/gArtistas/gArtistas.vue';
 import grafo from '../components/grafo/grafo.vue';
-
-import graficoSimple from  '../components/graficoBarra/BarGraph.vue';
+import agregarArtista from '../components/AgregarArtista/addartist.vue';
 
 Vue.use(VueRouter);
 
@@ -23,7 +22,7 @@ const routes = [
     { path: '#/gmascomentados', alias: '/gcomentados', component: masComentados},
     { path: '#/gcrecimientoartista', alias: '/gcrecimiento', component: crecimiento},
     { path: '#/grafo', alias: '/grafo', component: grafo},
-    { path: '/gartistas/:tipo/:name', component: gArtistas}
-]
-
+    { path: '#/gartistas/:tipo/:name', component: gArtistas},
+    { path: '#/agregarartista', alias: '/addartist', component: agregarArtista},
+];
 export default new VueRouter({routes})
