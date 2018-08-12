@@ -39,7 +39,7 @@ export default{
             .tooltip(["name", "tipo", "followers", "genre"])
             .draw()
       },
-    },
+    
     
     getNodos() {
       this.$http.get('http://165.227.12.119:9091/userStatistics/graph/nodes')
@@ -59,7 +59,8 @@ export default{
       }, response=> {
           console.log("No se pueden cargar los datos");
       });
-    },
+    }
+  },
     mounted:function(){
       let self = this;
       self.getNodos();

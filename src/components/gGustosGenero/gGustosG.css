@@ -12,3 +12,10 @@ rect:hover {
     fill: #3182bd;
     stroke: #000;
 }
+.centrado{
+  margin: auto;
+	text-align: center;
+	align-items: center;
+  border: 20px;
+  overflow-y: unset;
+}

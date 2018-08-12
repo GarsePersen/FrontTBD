@@ -1,7 +1,7 @@
 .wrapper {
     display: flex;
     align-items: stretch;
-    height: 93.5%;
+		height: 93.5%;		
 }
 .centrado {
 	display: flex;
