@@ -83,7 +83,7 @@ export default{
           
           .append("title")
           .text(function (d,i) {
-              return "Porcentaje Tweets Positivos:"+d.positiveTweets;
+              return "Porcentaje Tweets Positivos:"+d.positiveTweets * 100+"%";
             });
             
       svg.selectAll("bar")
@@ -101,7 +101,7 @@ export default{
 
         .append("title")
         .text(function (d,i) {
-            return "Porcentaje Tweets Negativos:"+d.negativeTweets;
+            return "Porcentaje Tweets Negativos:"+d.negativeTweets* 100+"%";
           });
         
       svg.append("g")
