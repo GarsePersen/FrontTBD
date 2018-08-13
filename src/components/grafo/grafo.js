@@ -8,7 +8,7 @@ export default{
       }
     },
     methods:{
-      loadGraphGrafo(){
+      loadGraphGrafo(nodes,connections){
           /*var nodes = [
             {"name": "alpha","size":24, "type": "user","edad":30},
             {"name": "beta","size":10, "type": "star"},
@@ -36,26 +36,28 @@ export default{
             .edges(connections)
             .size("size")
             .id("name")
-            .tooltip(["name", "tipo", "followers", "genre"])
+            .tooltip(["name", "type", "followers", "genre"])
             .draw()
       },
     
     
     getNodos() {
-      this.$http.get('http://165.227.12.119:9091/userStatistics/graph/nodes')
+      this.$http.get('http://165.227.12.119:9091/InfluyentUserArtist/graph/nodes')
       .then(response => {
           this.nodos = response.body;
-          this.getRelaciones(); 
+          this.getRelaciones(this.nodos); 
       }, 
         response => {
       console.log("No se pueden cargar los datos");
       });
     },
-    getRelaciones() {
-      this.$http.get('http://165.227.12.119:9091/userStatistics/graph/relations')
+    getRelaciones(nodos) {
+      this.$http.get('http://165.227.12.119:9091/InfluyentUserArtist/graph/relations')
       .then(response => {
           this.relaciones = response.body;
-          this.loadGrap3hGrafo(); 
+          console.log(this.nodos);
+          console.log(this.relaciones);
+          this.loadGraphGrafo(this.nodos,this.relaciones); 
       }, response=> {
           console.log("No se pueden cargar los datos");
       });
