@@ -12,21 +12,21 @@
               Segun artistas
           </a>
           <ul class="collapse list-unstyled" id="homeSubmenu">
-            <li><a href="#/gcrecimiento">Aumentando en popularidad</a></li>
-            <li><a href="#/gcomentados">Los mas comentados</a></li>
+            <li><a href="#/graph/gcrecimiento">Aumentando en popularidad</a></li>
+            <li><a href="#/graph/gcomentados">Los mas comentados</a></li>
             <li><a href="#gbestart" data-toggle="collapse" aria-expanded="false">Los mas queridos</a>
               <ul class="collapse list-unstyled" id="gbestart">
-                <li><a href="#/gbestart">Top 10 artistas</a></li>
+                <li><a href="#/graph/gbestart">Top 10 artistas</a></li>
                 <li v-for="genero in generos">
-                  <a :href="'#/gartistas/true/' + genero.nombre">{{genero.nombre}}</a>
+                  <a :href="'#/graph/gartistas/true/' + genero.nombre">{{genero.nombre}}</a>
                 </li>
               </ul>
             </li>
             <li><a href="#gworstart" data-toggle="collapse" aria-expanded="false">Los menos queridos</a>
-              <ul class="collapse list-unstyled" id="gworstart">
-                <li><a href="#/gworstart">Top 10 artistas</a></li>
+              <ul class="collapse list-unstyled" id="graph/gworstart">
+                <li><a href="#/graph/gworstart">Top 10 artistas</a></li>
                 <li v-for="genero in generos">
-                  <a :href="'#/gartistas/false/' + genero.nombre">{{genero.nombre}}</a>
+                  <a :href="'#/graph/gartistas/false/' + genero.nombre">{{genero.nombre}}</a>
                 </li>
               </ul>
             </li>
@@ -36,8 +36,8 @@
               Segun géneros
           </a>
           <ul class="collapse list-unstyled" id="genSubmenu">
-            <li><a href="#/gbestgen">Los mas queridos</a></li>
-            <li><a href="#/gworstgen">Los menos queridos</a></li>
+            <li><a href="#/graph/gbestgen">Los mas queridos</a></li>
+            <li><a href="#/graph/gworstgen">Los menos queridos</a></li>
           </ul>
           <ul class="collapse list-unstyled" id="mapSubmenu">
             <li><a href="#">Page 1</a></li>
@@ -48,7 +48,7 @@
               Grafos
           </a>
           <ul class="collapse list-unstyled" id="graphSubmenu">
-            <li><a href="#/grafo">Page 1</a></li>
+            <li><a href="#/graph/grafo">Page 1</a></li>
           </ul>
       </li>
     </ul>

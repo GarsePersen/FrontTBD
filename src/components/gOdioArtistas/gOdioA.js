@@ -121,10 +121,37 @@ export default{
         .attr("dy", "-.55em")
         .attr("transform", "rotate(-90)" );
           
-      var svg = d3.select('#leyenda')
-        .append("svg")
-          .attr("width", 100)
-          .attr("height", 100)
+        var leyendas = ["Tweets totales","Tweets positivos","Tweets negativos"];
+        var colores = ["#ABACB2","#70AA32","#E26809"];
+        var w = 60;
+        var legend = d3.select('#leyenda')
+          .append("svg")
+          .attr("class", "legend")
+          .attr("x", w - 60)
+          .attr("y", 30)
+          .attr("width", 155)
+          .attr("height", 95)
+            
+        legend.selectAll('g').data(leyendas)
+          .enter()
+          .append('g')
+          .each(function(d, i) {
+            var g = d3.select(this);
+            g.append("rect")
+              .attr("x", w - 65)
+              .attr("y", i*25)
+              .attr("width", 10)
+              .attr("height", 10)
+              .style("fill", colores[i]);
+    
+            g.append("text")
+              .attr("x", w - 50)
+              .attr("y", i * 25 + 8)
+              .attr("height",30)
+              .attr("width",100)
+              .text(d);
+  
+          });  
         
     },
   },

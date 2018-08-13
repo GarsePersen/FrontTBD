@@ -14,8 +14,17 @@ rect:hover {
 }
 .centrado{
   margin: auto;
-	text-align: center;
-	align-items: center;
-  border: 20px;
-  overflow-y: unset;
+  text-align: center;
+  align-items: center;
+}
+.wrapper {
+  display: flex;
+  align-items: stretch;
+  height: 93.5%;		
+}
+.legend {
+  padding: 15px;
+  font: 15px sans-serif;
+  background: white;
+  border-style: groove;
 }

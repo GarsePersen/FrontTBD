@@ -15,14 +15,14 @@ Vue.use(VueRouter);
 
 const routes = [
     { path: '/index', alias: '/', component: Index},
-    { path: '#/gmejoresart', alias: '/gbestart', component: mejores10A},
-    { path: '#/gpeoresart', alias: '/gworstart', component: peores10A},
-    { path: '#/gmejoresgen', alias: '/gbestgen', component: mejores10G},
-    { path: '#/gpeoresgen', alias: '/gworstgen', component: peores10G},
-    { path: '#/gmascomentados', alias: '/gcomentados', component: masComentados},
-    { path: '#/gcrecimientoartista', alias: '/gcrecimiento', component: crecimiento},
-    { path: '#/grafo', alias: '/grafo', component: grafo},
-    { path: '#/gartistas/:tipo/:name', component: gArtistas},
+    { path: '#/graph/gmejoresart', alias: '/graph/gbestart', component: mejores10A},
+    { path: '#/graph/gpeoresart', alias: '/graph/gworstart', component: peores10A},
+    { path: '#/graph/gmejoresgen', alias: '/graph/gbestgen', component: mejores10G},
+    { path: '#/graph/gpeoresgen', alias: '/graph/gworstgen', component: peores10G},
+    { path: '#/graph/gcomentados', alias: '/graph/gcomentados', component: masComentados},
+    { path: '#/graph/gcrecimientoartista', alias: '/graph/gcrecimiento', component: crecimiento},
+    { path: '#/graph/grafo', alias: '/graph/grafo', component: grafo},
+    { path: '#/graph/gartistas/:tipo/:name', component: gArtistas},
     { path: '#/agregarartista', alias: '/addartist', component: agregarArtista},
 ];
 export default new VueRouter({routes})

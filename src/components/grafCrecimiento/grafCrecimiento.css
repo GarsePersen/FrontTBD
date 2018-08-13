@@ -1,0 +1,11 @@
+.centrado{
+    margin: auto;
+    text-align: center;
+    align-items: center;
+  }
+  .wrapper {
+    display: flex;
+    align-items: stretch;
+    height: 93.5%;		
+  }
+ 
