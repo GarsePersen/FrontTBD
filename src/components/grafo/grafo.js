@@ -9,34 +9,23 @@ export default{
     },
     methods:{
       loadGraphGrafo(nodes,connections){
-          /*var nodes = [
-            {"name": "alpha","size":24, "type": "user","edad":30},
-            {"name": "beta","size":10, "type": "star"},
-            {"name": "gamma","size":12, "type": "user"},
-            {"name": "delta","size":10, "type": "user"},
-            {"name": "epsilon","size":16, "type": "star"},
-            {"name": "zeta","size":20, "type": "user","edad":35},
-            {"name": "theta","size":14, "type": "star"},
-            {"name": "eta","size":12, "type": "user"}
-          ]
-          var connections = [
-            {"source": "alpha", "target": "beta"},
-            {"source": "alpha", "target": "gamma"},
-            {"source": "beta", "target": "delta"},
-            {"source": "beta", "target": "epsilon"},
-            {"source": "zeta", "target": "gamma"},
-            {"source": "theta", "target": "gamma"},
-            {"source": "eta", "target": "gamma"}
-          ]
-          */
+          var i;
+          for (i in nodes){
+            var size = nodes[i].tamaño *3;
+            console.log("el tamaño original es: ",nodes[i].tamaño);
+            console.log("el tamaño nuevo es: ",size);
+            nodes[i].tamaño = size;
+          }
+          console.log("holiwiii pan con kiwi");
+          console.log(nodes); 
           var visualization = d3plus.viz()
             .container("#viz")
             .type("network")
             .data(nodes)
             .edges(connections)
-            .size("size")
-            .id("name")
-            .tooltip(["name", "type", "followers", "genre"])
+            .size("tamaño")
+            .id("nombre")
+            .tooltip(["nombre", "tipo","genero", "followers","ultimo_tweet"])
             .draw()
       },
     
