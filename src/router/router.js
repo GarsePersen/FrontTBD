@@ -10,6 +10,7 @@ import masComentados from  '../components/gArtistasComentados/gMasComentados.vue
 import gArtistas from '../components/gArtistas/gArtistas.vue';
 import grafo from '../components/grafo/grafo.vue';
 import agregarArtista from '../components/AgregarArtista/addartist.vue';
+import mapa from '../components/mapa/mapa.vue';
 
 Vue.use(VueRouter);
 
@@ -24,5 +25,6 @@ const routes = [
     { path: '#/graph/grafo', alias: '/graph/grafo', component: grafo},
     { path: '#/graph/gartistas/:tipo/:name', component: gArtistas},
     { path: '#/agregarartista', alias: '/addartist', component: agregarArtista},
+    { path: '#/mapa', alias: '/map', component: mapa}
 ];
 export default new VueRouter({routes})
