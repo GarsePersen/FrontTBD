@@ -671,9 +671,7 @@ export default{
       axios.get(url)
       .then(response=> {
         this.generos=response.data; 
-        alert(this.loaded);
         this.loaded = true;      
-        alert(this.loaded);
 
       });
     },
