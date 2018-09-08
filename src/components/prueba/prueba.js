@@ -9,6 +9,7 @@ export default {
       selectedBool: false,
       bandas: [],
       regionSelected: "",
+      generoSelected:"",
       info1: "",
       info3: "",
       info2: "",
@@ -661,6 +662,8 @@ export default {
   watch: {
     selected: function (newVal) {
       let url = 'http://165.227.12.119:9091/Geostatistics/genre/' + newVal;
+      this.generoSelected = newVal;
+      console.log()
       this.bandas = [];
       let cont = 0;
       this.regionI = 0;

@@ -52,7 +52,7 @@ div#seccion2{
     text-align: left;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     width: 90%;
-    height: 30%;
+    height: 34%;
     font-size: 18px;
     background-color: white;
 }
@@ -62,7 +62,7 @@ div#seccion3{
     text-align: left;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     width: 90%;
-    height: 15%;
+    height: 12%;
     background-color: white;
 }
 div#opciones{
@@ -81,11 +81,27 @@ label{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 16px;
 }
-p{
+a#ref{
+	color: rgb(8, 184, 149);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 20px;
-    color: solid rgb(236, 108, 48);
-    
+    font-size: 16px;
+}
+a#ref:link {
+    text-decoration: none;
+}
+
+a#ref:visited {
+    text-decoration: none;
+}
+
+a#ref:hover {
+    text-decoration: underline;
+    color:rgb(250, 111, 47);
+
+}
+
+a#ref:active {
+    text-decoration: underline;
 }
 .lds-ripple {
     display: inline-block;

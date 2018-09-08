@@ -3,8 +3,9 @@
         <header id="informacion">INFORMACIÓN GENERAL</header>
         <div id="seccion1">
             <label> {{info1}}</label>
+            <br>
             <label> {{info2}}</label>
-            <br><br>
+            <br>
             <label>Seleccione un estilo y una región para realizar análisis</label>
         </div>
         <div id="opciones">
@@ -16,11 +17,13 @@
             </select>
         </div>
         <div id="seccion2" v-if="selectedBool">
-            <label> Algunas bandas del género analizadas: </label></br>
+            <label> Algunas bandas del género {{generoSelected}} analizadas: </label></br>
             <li v-for="aux in bandas">{{ aux }}</li>
+            <label>¿Quieres ver los artistas más queridos? <a id="ref" :href="'#/graph/gartistas/true/' + generoSelected" target="_top">Click aqui!</a></label><br>
+            <label>¿Quieres ver los artistas menos queridos? <a id="ref" :href="'#/graph/gartistas/false/' + generoSelected"  target="_top">Click aqui!</a></label>
         </div>
         <div id="seccion3">
-                <label style="text-align: center;font-size: 19"> {{regionSelected}}</label>
+                <label style="text-align: center;font-size: 19; color:rgb(8, 184, 149)"> {{regionSelected}}</label>
                 <br>
                 <label style="font-size: 18"> {{info3}}</label>
         </div>        
