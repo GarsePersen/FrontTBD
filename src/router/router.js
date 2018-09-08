@@ -11,7 +11,7 @@ import gArtistas from '../components/gArtistas/gArtistas.vue';
 import grafo from '../components/grafo/grafo.vue';
 import agregarArtista from '../components/AgregarArtista/addartist.vue';
 import mapa from '../components/mapa/mapa.vue';
-
+import prueba from '../components/prueba/prueba.vue';
 Vue.use(VueRouter);
 
 const routes = [
@@ -25,6 +25,7 @@ const routes = [
     { path: '#/graph/grafo', alias: '/graph/grafo', component: grafo},
     { path: '#/graph/gartistas/:tipo/:name', component: gArtistas},
     { path: '#/agregarartista', alias: '/addartist', component: agregarArtista},
-    { path: '#/mapa', alias: '/map', component: mapa}
+    //{ path: '#/mapa', alias: '/map', component: mapa}
+    { path: '#/mapa', alias: '/map', component: prueba}
 ];
 export default new VueRouter({routes})

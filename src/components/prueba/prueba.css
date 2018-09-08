@@ -1,0 +1,123 @@
+
+div#contenedor{
+    margin: auto;
+    margin-top: 20px;
+    width: 75%;
+    height: 90%;
+    background-color: white;
+    border: 4px solid #148F77;
+    border-radius: 4px;
+}
+div#mapa{
+    width: 50%;
+    height:100%;
+    background-color: white;
+}
+div#informacion{
+    float: right;
+    width: 50%;
+    height:100%;
+    background-color: white;
+    border-left: 4px solid #148F77;
+}
+div#escala{
+    float: left;
+    width: 25%;
+    height: 140px;
+    background-color: white;
+    margin-left: 4%;
+    margin-top: 4%;
+}
+header#informacion {
+    text-align: center;
+    background-color: #148F77;
+    padding: 3%;
+    color:white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+}
+div#seccion1{
+    margin: auto;
+    margin-top: 3%;
+    text-align: left;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 90%;
+    height: 25%;
+    font-size: 18px;
+    background-color: white;
+}
+div#seccion2{
+    margin: auto;
+    margin-top: 3%;
+    text-align: left;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 90%;
+    height: 30%;
+    font-size: 18px;
+    background-color: white;
+}
+div#seccion3{
+    margin: auto;
+    margin-top: 3%;
+    text-align: left;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 90%;
+    height: 15%;
+    background-color: white;
+}
+div#opciones{
+    width: 100%;
+    height: 8%;
+    background-color: #424949;
+}
+select {
+    border: 1px solid #ccc;
+    width: 30%;
+    margin-top: 2%;
+    overflow: hidden;
+    background: white;
+}
+label{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+}
+p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+    color: solid rgb(236, 108, 48);
+    
+}
+.lds-ripple {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+  }
+  .lds-ripple div {
+    position: absolute;
+    border: 8px solid rgb(250, 111, 47);
+    opacity: 1;
+    border-radius: 50%;
+    animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+  }
+  .lds-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+  }
+  @keyframes lds-ripple {
+    0% {
+      top: 112px;
+      left: 112px;
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+    100% {
+      top: -4px;
+      left: -4px;
+      width: 232px;
+      height: 232px;
+      opacity: 0;
+    }
+  }
+  
+  
