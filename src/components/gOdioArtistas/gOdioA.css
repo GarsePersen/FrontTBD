@@ -1,4 +1,32 @@
 
+div#contenedor{
+  margin: auto;
+  margin-top: 20px;
+  width: 75%;
+  height: 90%;
+  background-color: white;
+  border: 15px solid #636363;
+  border-radius: 10px;
+}
+div#informacion{
+  float: right;
+  width: 30%;
+  height:91%;
+  background-color: white;
+  border-left: 1px solid #aaaaaa;
+  margin: auto;
+  text-align: left;
+  background-color: white;
+}
+label{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #636363;
+  font-size: 13.6px;
+}
+.li{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 16px;
+}
 .axis {
   font: 15px sans-serif;
 }
@@ -9,13 +37,14 @@
 }
 
 rect:hover {
-    fill: #3182bd;
-    stroke: #000;
+    fill: #25A38E;
+    stroke: white;
+
 }
 .centrado{
   margin: auto;
-  text-align: center;
-  align-items: center;
+	text-align: center;
+	align-items: center;
 }
 .wrapper {
   display: flex;
@@ -23,8 +52,149 @@ rect:hover {
   height: 93.5%;		
 }
 .legend {
-  padding: 15px;
-  font: 15px sans-serif;
+  padding: 18px;
+  font-size: 18px ;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background: white;
-  border-style: groove;
 }
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 8px solid rgb(250, 111, 47);
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+header#informacion {
+  text-align: center;
+  background-color: #636363;
+  padding: 1%;
+  color:white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 112px;
+    left: 112px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: -4px;
+    left: -4px;
+    width: 232px;
+    height: 232px;
+    opacity: 0;
+  }
+}
+
+
+div#contenedor{
+  margin: auto;
+  margin-top: 20px;
+  width: 75%;
+  height: 90%;
+  background-color: white;
+  border: 15px solid #636363;
+  border-radius: 10px;
+}
+div#informacion{
+  float: right;
+  width: 30%;
+  height:91%;
+  background-color: white;
+  border-left: 1px solid #aaaaaa;
+  margin: auto;
+  text-align: left;
+  background-color: white;
+}
+label{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #636363;
+  font-size: 13.6px;
+}
+.li{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 16px;
+}
+.axis {
+  font: 15px sans-serif;
+}
+
+.axis path,.axis line {
+  fill: none;
+  stroke: #000;
+}
+
+rect:hover {
+    fill: #25A38E;
+    stroke: white;
+
+}
+.centrado{
+  margin: auto;
+	text-align: center;
+	align-items: center;
+}
+.wrapper {
+  display: flex;
+  align-items: stretch;
+  height: 93.5%;		
+}
+.legend {
+  padding: 18px;
+  font-size: 18px ;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background: white;
+}
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 8px solid rgb(250, 111, 47);
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+header#informacion {
+  text-align: center;
+  background-color: #636363;
+  padding: 1%;
+  color:white;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 112px;
+    left: 112px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: -4px;
+    left: -4px;
+    width: 232px;
+    height: 232px;
+    opacity: 0;
+  }
+}
+

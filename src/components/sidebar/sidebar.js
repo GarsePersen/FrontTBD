@@ -18,6 +18,7 @@ export default {
          .then(function(json){
              self.generos = [];
              json.forEach(genero => self.generos.push({id: genero.id, nombre: genero.name}));
+             console.log(self.generos);
         });
     }
   }

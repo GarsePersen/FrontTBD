@@ -1,4 +1,22 @@
-<div class="wrapper col-md-12 centrado">
-    <div id="grafico"></div>
-    <div id="leyenda"></div>
-</div>
+<div   v-if="loaded" id="contenedor">
+        <header id="informacion">ARTISTAS MÁS COMENTADOS</header>
+        
+            <div id="grafico">
+                <div id="informacion">
+                    <div style="margin-left: 5%">
+                        <div id="leyenda"></div>
+                        <label style="text-align: center;font-size: 17px; color: #1d7980">10 artistas más comentados</label>
+
+                            <label v-for="artista in artistas">-{{artista.name}}<br>positivos = {{artista.pos}}, negativos = {{artista.neg}}<br></label>
+                        
+
+                    </div>
+                        
+                </div>
+            </div>
+            
+        </div>
+    
+        <div v-else style="margin-top: -10%;margin-left: 40%;">
+                <div class="lds-ripple"><div></div><div></div></div>
+        </div>

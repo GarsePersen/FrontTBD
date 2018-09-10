@@ -1,8 +1,9 @@
 
 export default{
-  data:function(){
+  data() {
     return {
-      graphData:[]
+      artistas: [],
+      loaded: false,
     }
   },
   props:['title'],
@@ -12,9 +13,9 @@ export default{
       for (let i = 0; i < data.length; i++) {
         if(data[i].name.length > mayorL){ mayorL = data[i].name.length}
       }
-      var margin = {top: 30, right: 30, bottom: mayorL*9, left: 60},
-      width = 700 - margin.left - margin.right,
-      height = 550 - margin.top - margin.bottom;
+      var margin = {top: 50, right: 30, bottom: mayorL*9, left: 60},
+      width = 600 - margin.left - margin.right,
+      height = 500 - margin.top - margin.bottom;
 
       var x = d3.scale.ordinal().rangeRoundBands([0, width], .07);
 
@@ -30,16 +31,17 @@ export default{
           .orient("left")
           .ticks(24)
           .tickFormat(d3.format(".2s"));
-          
+        
 
       var svg = d3.select('#grafico')
         .append("svg")
+        .attr("style","margin-left:-30%")
+        .attr("style","margin-right:-4%")
           .attr("width", width + margin.left + margin.right)
           .attr("height", height + margin.top + margin.bottom)
         .append("g")
           .attr("transform",
                 "translate(" + margin.left + "," + margin.top + ")");
-
       data.forEach(function(d) {
           d.name = d.name;
           d.positiveTweets = +d.positiveTweets;
@@ -68,7 +70,7 @@ export default{
           
           .append("title")
           .text(function (d,i) {
-              return "Porcentaje Tweets Positivos:"+d.positiveTweets * 100+"%";
+              return "Porcentaje Tweets Positivos:"+(d.positiveTweets * 100).toFixed(2)+"%";
             });
             
       svg.selectAll("bar")
@@ -86,7 +88,7 @@ export default{
 
         .append("title")
         .text(function (d,i) {
-            return "Porcentaje Tweets Negativos:"+d.negativeTweets* 100+"%";
+            return "Porcentaje Tweets Negativos:"+(d.negativeTweets* 100).toFixed(2)+"%";
           });
         
       svg.append("g")
@@ -118,7 +120,7 @@ export default{
         .attr("x", w - 60)
         .attr("y", 30)
         .attr("width", 155)
-        .attr("height", 95)
+        .attr("height", 60)
           
       legend.selectAll('g').data(leyendas)
         .enter()
@@ -141,17 +143,48 @@ export default{
 
         });  
         
+    },
+    fnum(x) {
+      if(isNaN(x)) return x;
+    
+      if(x < 9999) {
+        return x;
+      }
+    
+      if(x < 1000000) {
+        return Math.round(x/1000) + "K";
+      }
+      if( x < 10000000) {
+        return (x/1000000).toFixed(2) + "M";
+      }
+    
+      if(x < 1000000000) {
+        return Math.round((x/1000000)) + "M";
+      }
+    
+      if(x < 1000000000000) {
+        return Math.round((x/1000000000)) + "B";
+      }
+    
+      return "1T+";
     }
   },
   mounted:function(){
     let self = this;
-    fetch('http://165.227.12.119:9091/statistics/best10/popularArtist')
+    fetch('http://165.227.12.119:9091/statistics/worst10/genres')
     .then(function(response) {
+      self.loaded = true;
       return response.json();
     })
     .then(function(myJson) {
       let aux= myJson;
       self.loadGraphGA(aux);
+      aux.forEach(function(d) {
+        var pos = Math.round(d.positiveTweets*d.total_tweets);
+        var neg = Math.round(d.negativeTweets*d.total_tweets);
+        self.artistas.push({name:d.name,pos:self.fnum(pos),neg:self.fnum(neg)});
+      });
+      
     });
   }
 }
