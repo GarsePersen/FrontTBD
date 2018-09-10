@@ -655,15 +655,12 @@ export default {
         ]
       }
       );
-
-
     }
   },
   watch: {
     selected: function (newVal) {
       let url = 'http://165.227.12.119:9091/Geostatistics/genre/' + newVal;
       this.generoSelected = newVal;
-      console.log()
       this.bandas = [];
       let cont = 0;
       this.regionI = 0;
@@ -733,8 +730,6 @@ export default {
               that.regionMet++;
             }
           });
-          console.log(that.regionMet);
-          console.log("hola perrito")
           this.selectedBool = true;
           this.geostatistics.forEach(function (aux) {
             if ((that.bandas.indexOf(aux.name) == -1)&&(cont<=3)) {
@@ -743,10 +738,7 @@ export default {
             }
           });
           that.crearMapa();
-
         });
-      console.log(this.regionMet);
-
     }
   },
   created() {
@@ -756,16 +748,13 @@ export default {
       .then(response => {
         let data = response.data;
         this.info2 = "Cantidad de tweets totales analizados: " + data.length;
-
       });
     axios.get(url)
       .then(response => {
         this.generos = response.data;
         this.loaded = true;
         this.info1 = "Cantidad de generos analizados: " + this.generos.length;
-        console.log("Hola gatito");
         this.crearMapa();
-
       });
   },
   mounted: function () {

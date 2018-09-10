@@ -9,8 +9,8 @@ div#contenedor{
     border-radius: 4px;
 }
 div#mapa{
-    width: 50%;
-    height:100%;
+    margin-top:4%;
+    height:96%;
     background-color: white;
 }
 div#informacion{
@@ -22,11 +22,8 @@ div#informacion{
 }
 div#escala{
     float: left;
-    width: 25%;
-    height: 140px;
+    height: 200px;
     background-color: white;
-    margin-left: 4%;
-    margin-top: 4%;
 }
 header#informacion {
     text-align: center;
