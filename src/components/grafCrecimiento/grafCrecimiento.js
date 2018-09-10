@@ -13,7 +13,9 @@ export default{
 					height = 600 - margin.top - margin.bottom;
 
 			var parseDate = d3.time.format("%Y-%m-%d").parse;
-					
+			
+			
+
 			var x = d3.time.scale()
 					.range([0, width]);
 
@@ -31,7 +33,7 @@ export default{
 				.orient("left");
 
 			var line = d3.svg.line()
-				.interpolate("basis")
+				.interpolate("linear")
 				.x(function(d) { 
 					return x(d.fecha);})
 				.y(function(d) { 
@@ -43,14 +45,25 @@ export default{
 				.append("g")
 				.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-
+				
 			for (let i = 0; i < data.length; i++) {
 				data[i].fecha = data[i].fecha.split("T",1)[0];
 				data[i].index = i;
 			}
 
+			var datos =[];
+			var fecha= [];
+			for (let i = 0; i < data.length; i++) {
+				if(fecha.indexOf(data[i].fecha) == -1){
+					fecha.push(data[i].fecha);
+					datos.push(data[i]);
+				}
+			}
+			console.log(datos);
+			data = datos;
+
+
 			color.domain(d3.keys(data[0]).slice(1));
-			
 			var bandas = color.domain().map(function(name, index){
 				return {
 					name: name,
