@@ -1,5 +1,5 @@
-<div v-if="loaded" id="contenedor">
-    <div id="informacion">
+<div v-if="loaded" id="contenedor" class="container row" style="padding: 0%!important">
+    <div id="informacion" class="col-md-6 container-fluid" style="padding: 0%!important" >
         <header id="informacion">INFORMACIÓN GENERAL</header>
         <div id="seccion1">
             <label> {{info1}}</label>
@@ -23,13 +23,14 @@
             <label>¿Quieres ver los artistas menos queridos? <a id="ref" :href="'#/graph/gartistas/false/' + generoSelected"  target="_top">Click aqui!</a></label>
         </div>
         <div id="seccion3">
-                <label style="text-align: center;font-size: 19; color:rgb(8, 184, 149)"> {{regionSelected}}</label>
-                <br>
-                <label style="font-size: 18"> {{info3}}</label>
+            <label style="text-align: center;font-size: 19; color:rgb(8, 184, 149)"> {{regionSelected}}</label>
+            <br>
+            <label style="font-size: 18"> {{info3}}</label>
         </div>        
     </div>
-    <div id="mapa">
-            <img id="Mapachile" src="/src/img/H1N1_Chile_Map_by_confirmed_deaths.svg" usemap="#mapaChile" style="height: 95%;margin-top:4%;padding-right: 25%;">
+    <div class="col-md-6 row" style="display: flex;justify-content: center;align-items: center;">
+        <div class="col-md-8" id="mapa" align="center">
+            <img id="Mapachile" src="/src/img/H1N1_Chile_Map_by_confirmed_deaths.svg" usemap="#mapaChile" style="height: 95%;">
             <map name="mapaChile">
                 <area v-on:click="mapPressed('XV')" href="#" name="Arica y Parinacota" target="" alt="Link" title="Arica y Parinacota" coords="200,48,201,57,199,67,201,78,207,91,220,81,232,80,244,83,254,84,261,84,269,80,271,74,267,62,267,52,267,44,260,40,257,27,253,17,250,10,249,1,240,7,233,13,227,8,227,15,230,25,231,35,226,39,217,43,208,47"
                     shape="poly">
@@ -62,18 +63,21 @@
                 <area v-on:click="mapPressed('XII')" name="Magallanes y Antártica Chilena" target="" alt="" title="" href="#" coords="29,1610,46,1608,75,1604,121,1633,124,1636,108,1669,112,1673,110,1681,114,1686,115,1696,120,1704,122,1716,132,1706,141,1702,148,1705,151,1723,147,1729,151,1737,150,1744,147,1752,153,1758,162,1765,161,1771,224,1771,252,1779,276,1789,269,1805,268,1919,282,1917,306,1920,323,1928,335,1932,346,1937,350,1944,351,1994,309,1993,290,1969,282,1959,277,1955,265,1955,255,1957,221,1941,185,1921,163,1910,146,1894,132,1886,120,1879,122,1869,113,1862,105,1850,103,1843,97,1848,93,1841,90,1834,84,1826,81,1822,79,1815,88,1818,96,1824,107,1826,107,1820,102,1815,95,1813,89,1810,81,1803,73,1794,63,1778,57,1759,47,1716"
                     shape="poly">
             </map>
-            <div id="escala">
-                    <div style="background-color: #E9F9EA;width: 14px; height: 14px"></div>
-                    <div style="background-color: #A0DEAE;width: 14px; height: 14px"></div>
-                    <div style="background-color: #78B384;width: 14px; height: 14px"></div>
-                    <div style="background-color: #62A270;width: 14px; height: 14px"></div>
-                    <div style="background-color: #4C925B;width: 14px; height: 14px"></div>
-                    <div style="background-color: #317E41;width: 14px; height: 14px"></div>
-                    <div style="background-color: #286A36;width: 14px; height: 14px"></div>
-                    <div style="background-color: #216830;width: 14px; height: 14px"></div>
-                    <div style="background-color: #0B4918;width: 14px; height: 14px"></div>
-                    <div style="background-color: #053A11;width: 14px; height: 14px"></div>
-            </div>
+        </div>
+        <div class="col-md-4" align="center" id="escala">
+            <label>Mas</label>
+            <div style="background-color: #053A11;width: 15px; height: 15px"></div>
+            <div style="background-color: #0B4918;width: 15px; height: 15px"></div>
+            <div style="background-color: #216830;width: 15px; height: 15px"></div>
+            <div style="background-color: #286A36;width: 15px; height: 15px"></div>
+            <div style="background-color: #317E41;width: 15px; height: 15px"></div>
+            <div style="background-color: #4C925B;width: 15px; height: 15px"></div>
+            <div style="background-color: #62A270;width: 15px; height: 15px"></div>
+            <div style="background-color: #78B384;width: 15px; height: 15px"></div>
+            <div style="background-color: #A0DEAE;width: 15px; height: 15px"></div>
+            <div style="background-color: #E9F9EA;width: 15px; height: 15px"></div>
+            <label>Menos</label>            
+        </div>
     </div>
    
 </div>
